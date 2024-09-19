@@ -3,11 +3,14 @@
 import { Github, Linkedin } from "lucide-react";
 import Link from "next/link";
 import { TypeAnimation } from "react-type-animation";
+import Project from "./components/Project";
 
 export default function Page() {
+  const iconPath =
+    "M50 0L62.5 12.5H87.5V37.5L100 50L87.5 62.5V87.5H62.5L50 100L37.5 87.5H12.5V62.5L0 50L12.5 37.5V12.5H37.5L50 0ZM50 25V75H75V25H50Z";
   return (
-    <div className="min-h-screen flex flex-col justify-center items-center p-8  bg-[#1e2235] text-white">
-      <div className=" justify-center animate-pop-in">
+    <div className="min-h-screen flex flex-col justify-center items-center p-8 bg-[#1e2235] text-white">
+      <div className=" flex flex-col items-center justify-center min-h-[calc(100vh-256px)]  animate-pop-in">
         <h1 className="text-8xl font-bold mb-2">
           Ken Chan<span className="text-purple-500">.</span>
         </h1>
@@ -77,6 +80,32 @@ export default function Page() {
             .
           </p>
         </div>
+      </div>
+      {/* The featured project */}
+      <div className="mt-32 flex flex-col items-center justify-center min-w-full">
+        <h1 className="text-4xl font-bold mb-12">Featured projects</h1>
+        {/* First Project cards */}
+        <Project
+          rightFirst={false}
+          RightColumnProps={{
+            title: "ABC Company",
+            subtitle: "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+            description: "This is a ABC Company project. Very Good.",
+            rowNumber: 1,
+          }}
+          LeftColumnProps={{ pathData: iconPath }}
+        />
+        {/* Second Project cards */}
+        <Project
+          rightFirst={true}
+          RightColumnProps={{
+            title: "FF Firm",
+            subtitle: "FF is a good firm",
+            description: "FF is a good firm. I am very proud of my work.",
+            rowNumber: 2,
+          }}
+          LeftColumnProps={{ pathData: iconPath }}
+        />
       </div>
     </div>
   );
