@@ -17,7 +17,7 @@ const config: Config = {
         sans: ["Inter", "sans-serif"],
       },
       colors: {
-        background: "#1e2235",
+        background: "#1e2540",
         primary: "#ffffff",
         secondary: "#a78bfa",
       },

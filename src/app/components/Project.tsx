@@ -2,6 +2,7 @@ import React from "react";
 
 type LeftColumnProps = {
   pathData: string;
+  iconTitle: string;
 };
 
 type RightColumnProps = {
@@ -18,14 +19,14 @@ type ProjectProps = {
 };
 
 // Left Column Component
-const LeftColumn: React.FC<LeftColumnProps> = ({ pathData }) => (
+const LeftColumn: React.FC<LeftColumnProps> = ({ iconTitle, pathData }) => (
   <div className="lg:w-1/3 flex flex-col items-center justify-center">
     <div className="w-32 h-32 mb-4">
       <svg viewBox="0 0 100 100" className="w-full h-full fill-current">
         <path d={pathData} />
       </svg>
     </div>
-    <h2 className="text-4xl font-bold tracking-wider">Testing</h2>
+    <h2 className="text-4xl font-bold tracking-wider">{iconTitle}</h2>
   </div>
 );
 
@@ -42,7 +43,7 @@ const RightColumn: React.FC<RightColumnProps> = ({
     </span>
     <h3 className="text-[#4a5568] text-lg mb-4">{title}</h3>
     <h2 className="text-4xl font-bold mb-4">{subtitle}</h2>
-    <p className="text-[#a0aec0] mb-8">{description}</p>
+    <p className="text-[#a0aec0] mb-8 text-xl">{description}</p>
   </div>
 );
 
@@ -50,7 +51,7 @@ const RightColumn: React.FC<RightColumnProps> = ({
 const Project: React.FC<ProjectProps> = ({
   rightFirst,
   RightColumnProps: { title, subtitle, description, rowNumber },
-  LeftColumnProps: { pathData },
+  LeftColumnProps: { iconTitle, pathData },
 }) => (
   <div className="min-w-full min-h-[calc(100vh-256px)] flex flex-col lg:flex-row gap-8 p-8">
     {rightFirst ? (
@@ -61,11 +62,11 @@ const Project: React.FC<ProjectProps> = ({
           description={description}
           rowNumber={rowNumber}
         />
-        <LeftColumn pathData={pathData} />
+        <LeftColumn pathData={pathData} iconTitle={iconTitle} />
       </>
     ) : (
       <>
-        <LeftColumn pathData={pathData} />
+        <LeftColumn pathData={pathData} iconTitle={iconTitle} />
         <RightColumn
           title={title}
           subtitle={subtitle}

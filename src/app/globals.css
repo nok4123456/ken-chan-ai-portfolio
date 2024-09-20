@@ -80,3 +80,17 @@
       brightness(105%) contrast(101%);
   }
 }
+
+.rotating-text {
+  animation: rotate 30s linear infinite;
+  transform-origin: 50% 50%;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
