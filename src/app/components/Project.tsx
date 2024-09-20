@@ -1,4 +1,5 @@
 import React from "react";
+import { useInView } from "../hooks/useInView";
 
 type LeftColumnProps = {
   pathData: string;
@@ -36,16 +37,35 @@ const RightColumn: React.FC<RightColumnProps> = ({
   subtitle,
   description,
   rowNumber,
-}) => (
-  <div className="lg:w-2/3 bg-[#000000] p-8 relative">
-    <span className="text-[#4a5568] text-sm">
-      {String(rowNumber).padStart(2, "0")}_
-    </span>
-    <h3 className="text-[#4a5568] text-lg mb-4">{title}</h3>
-    <h2 className="text-4xl font-bold mb-4">{subtitle}</h2>
-    <p className="text-[#a0aec0] mb-8 text-xl">{description}</p>
-  </div>
-);
+}) => {
+  const [ref, isInView] = useInView({ threshold: 0.1 });
+
+  return (
+    <div
+      ref={ref as React.RefObject<HTMLDivElement>}
+      className="lg:w-2/3 bg-[#000000] p-8 relative"
+    >
+      <span className="text-[#4a5568] text-sm">
+        {String(rowNumber).padStart(2, "0")}_
+      </span>
+      <h3 className="text-[#4a5568] text-lg mb-4">{title}</h3>
+      <h2
+        className={`text-4xl font-bold mb-4 ${
+          isInView ? "fade-in" : "opacity-0"
+        }`}
+      >
+        {subtitle}
+      </h2>
+      <p
+        className={`text-[#a0aec0] mb-8 text-xl ${
+          isInView ? "slide-in" : "opacity-0"
+        }`}
+      >
+        {description}
+      </p>
+    </div>
+  );
+};
 
 // Project Component
 const Project: React.FC<ProjectProps> = ({
