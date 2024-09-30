@@ -8,8 +8,8 @@ const Navbar = () => {
         <Link href="/" className="text-white px-3">
           Home
         </Link>
-        <Link href="/skills" className="text-white px-3">
-          Skills
+        <Link href="/about" className="text-white px-3">
+          About
         </Link>
         <Link href="/projects" className="text-white px-3">
           Projects
