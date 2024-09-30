@@ -7,13 +7,11 @@ import Project from "./components/Project";
 import CircularLogo from "./components/Icon";
 
 export default function Page() {
-  const iconPath =
-    "M50 0L62.5 12.5H87.5V37.5L100 50L87.5 62.5V87.5H62.5L50 100L37.5 87.5H12.5V62.5L0 50L12.5 37.5V12.5H37.5L50 0ZM50 25V75H75V25H50Z";
   return (
     <div className="min-h-screen flex flex-col justify-center items-center p-8 bg-[#1e2540] text-white">
       <CircularLogo
         link="/projects"
-        outSideString="OPEN MENU • OPEN MENU • OPEN MENU •"
+        outSideString=" MYPROJECT• MYPROJECT• MYPROJECT•"
         inSideString="[KC]"
       />
       <div className=" flex flex-col items-center justify-center min-h-[calc(100vh-256px)]  animate-pop-in">
@@ -66,10 +64,10 @@ export default function Page() {
         <div className="space-y-4 max-w-2xl">
           <h3 className="text-4xl font-semibold">Hello</h3>
           <p className="text-2xl text-gray-300">
-            I am Ken Chan, an AI developer with approximately two years of
-            experience. I specialize in full-stack development and data
-            analytics, combining technical expertise with analytical skills to
-            deliver innovative solutions.
+            I am Ken Chan, an AI developer with two years of experience. I
+            specialize in full-stack development and data analytics, combining
+            technical expertise with analytical skills to deliver innovative
+            solutions.
           </p>
           <p className="text-xl text-gray-300">
             You can connect with me on{" "}
@@ -88,7 +86,7 @@ export default function Page() {
         </div>
       </div>
       {/* The working experience */}
-      <div className="mt-32 flex flex-col items-center justify-center min-w-full">
+      <div className="mt-16 flex flex-col items-center justify-center min-w-full">
         <h1 className="text-4xl font-bold mb-12">Working experience</h1>
         {/* First Project cards */}
         <Project
@@ -100,18 +98,26 @@ export default function Page() {
               "During my time at iASPEC, I had the opportunity to work with a dedicated team focused on innovative solutions in fintech and cybersecurity. My role involved contributing to projects such as the Enterprise Fast Payment System and the Digital Signature for e-Cheque, where I gained valuable experience in developing efficient payment services and secure digital transaction technologies. This experience not only enhanced my technical skills but also deepened my understanding of the fintech industry's dynamic landscape.",
             rowNumber: 1,
           }}
-          LeftColumnProps={{ pathData: iconPath, iconTitle: "iASPEC" }}
+          LeftColumnProps={{
+            svg_icon: <img className="filter-white" src="/iASPEC.svg" />,
+            iconTitle: "iASPEC",
+          }}
         />
         {/* Second Project cards */}
         <Project
           rightFirst={true}
           RightColumnProps={{
-            title: "FF Firm",
-            subtitle: "FF is a good firm",
-            description: "FF is a good firm. I am very proud of my work.",
+            title: "Forex Forest",
+            subtitle:
+              "Pioneering Automated Trading and AI Solutions at Forex Forest",
+            description:
+              "At Forex Forest, I am part of a forward-thinking team dedicated to advancing algorithmic trading education and software development. My role as an AI developer, software engineer, and data analyst involves crafting sophisticated AI trading tools and educational programs. This experience has honed my skills in the design and implementation of automated trading systems, providing a deeper insight into the evolving landscape of AI-driven financial technologies.",
             rowNumber: 2,
           }}
-          LeftColumnProps={{ pathData: iconPath, iconTitle: "FF Firm" }}
+          LeftColumnProps={{
+            svg_icon: <img src="/FFlogo-icon-14.png" />,
+            iconTitle: "Forex Forest",
+          }}
         />
       </div>
     </div>

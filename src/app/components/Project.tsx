@@ -1,9 +1,10 @@
 import React from "react";
 import { useInView } from "../hooks/useInView";
+import CircularLogo from "./Icon";
 
 type LeftColumnProps = {
-  pathData: string;
   iconTitle: string;
+  svg_icon: React.ReactNode;
 };
 
 type RightColumnProps = {
@@ -20,13 +21,9 @@ type ProjectProps = {
 };
 
 // Left Column Component
-const LeftColumn: React.FC<LeftColumnProps> = ({ iconTitle, pathData }) => (
+const LeftColumn: React.FC<LeftColumnProps> = ({ iconTitle, svg_icon }) => (
   <div className="lg:w-1/3 flex flex-col items-center justify-center">
-    <div className="w-32 h-32 mb-4">
-      <svg viewBox="0 0 100 100" className="w-full h-full fill-current">
-        <path d={pathData} />
-      </svg>
-    </div>
+    <div className="w-32 h-32 mb-4">{svg_icon}</div>
     <h2 className="text-4xl font-bold tracking-wider">{iconTitle}</h2>
   </div>
 );
@@ -63,6 +60,17 @@ const RightColumn: React.FC<RightColumnProps> = ({
       >
         {description}
       </p>
+      <div
+        className={`relative pt-12 flex justify-center items-center  ${
+          isInView ? "fade-in" : "opacity-0"
+        }`}
+      >
+        <CircularLogo
+          link={`/projects/${title}`}
+          outSideString="MY PROJECT DETAIL•MY PROJECT DETAIL•"
+          inSideString="😎"
+        />
+      </div>
     </div>
   );
 };
@@ -71,7 +79,7 @@ const RightColumn: React.FC<RightColumnProps> = ({
 const Project: React.FC<ProjectProps> = ({
   rightFirst,
   RightColumnProps: { title, subtitle, description, rowNumber },
-  LeftColumnProps: { iconTitle, pathData },
+  LeftColumnProps: { iconTitle, svg_icon },
 }) => (
   <div className="min-w-full min-h-[calc(100vh-256px)] flex flex-col lg:flex-row gap-8 p-8">
     {rightFirst ? (
@@ -82,11 +90,11 @@ const Project: React.FC<ProjectProps> = ({
           description={description}
           rowNumber={rowNumber}
         />
-        <LeftColumn pathData={pathData} iconTitle={iconTitle} />
+        <LeftColumn svg_icon={svg_icon} iconTitle={iconTitle} />
       </>
     ) : (
       <>
-        <LeftColumn pathData={pathData} iconTitle={iconTitle} />
+        <LeftColumn svg_icon={svg_icon} iconTitle={iconTitle} />
         <RightColumn
           title={title}
           subtitle={subtitle}
