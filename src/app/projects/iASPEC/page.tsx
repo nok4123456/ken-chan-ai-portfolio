@@ -1,10 +1,10 @@
 "use client";
 
-import CircularLogo from "../components/Icon";
+import CircularLogo from "../../components/Icon";
 
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import Project from "../components/Project";
+import Project from "../../components/Project";
 export default function Page() {
   const aboutRef = useRef(null);
   const personalRef = useRef(null);
@@ -12,7 +12,7 @@ export default function Page() {
   const isPersonalInView = useInView(personalRef);
 
   return (
-    <div className="min-h-screen min-w-full flex flex-col justify-center items-center p-8 bg-[#1e2540] text-white">
+    <div className="min-h-screen flex flex-col justify-center items-center p-8 bg-[#1e2540] text-white">
       <CircularLogo
         link="/"
         outSideString="•Home •Home •Home •Home •Home•Home"
