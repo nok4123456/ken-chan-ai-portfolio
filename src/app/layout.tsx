@@ -1,6 +1,7 @@
 // app/layout.tsx
 import Navbar from "./components/Navbar";
-import "./globals.css"; // Adjust the path as needed
+import "./globals.css";
+import Footer from "./components/Footer";
 export default function RootLayout({
   children,
 }: {
@@ -11,6 +12,7 @@ export default function RootLayout({
       <body>
         <Navbar />
         <main className="mx-auto">{children}</main>
+        <Footer />
       </body>
     </html>
   );
