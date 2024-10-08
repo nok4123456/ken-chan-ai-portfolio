@@ -4,12 +4,58 @@ import CircularLogo from "../components/Icon";
 import WordFlow from "../components/Word-flow";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
+import { motion } from "framer-motion";
+
+interface EnhancedParagraphsProps {
+  paragraphs: string[];
+}
 
 export default function Page() {
   const aboutRef = useRef(null);
   const personalRef = useRef(null);
   const isAboutInView = useInView(aboutRef);
   const isPersonalInView = useInView(personalRef);
+  const personal_paragraphs = [
+    "Programming captivates me as a math enthusiast and passionate coder who delves into algorithms in my spare time. My love for numbers and logic drives me to continuously engage with new coding challenges, enhancing my knowledge and skills in the ever-evolving tech landscape.",
+    "Bouldering brings joy into my life beyond the digital world. This sport not only tests my physical strength but also hones my problem-solving skills as I tackle complex climbing routes. My affinity for overcoming challenges is mirrored in my musical endeavors as well.",
+    "Drumming is a thrilling part of my musical journey. The rhythmic beats and required coordination are both exhilarating and rewarding. When I'm not coding or climbing, I'm often found immersed in music, practicing the drums or exploring new genres and sounds. These diverse activities nurture my creativity and maintain a balance between my intellectual, physical, and artistic expressions.",
+  ];
+
+  const wordVariants = {
+    initial: { opacity: 0, y: 20 },
+    animate: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.5, ease: "easeOut" },
+    },
+    hover: { scale: 1.1, color: "#3b82f6", transition: { duration: 0.2 } },
+  };
+  function EnhancedParagraphs(paragraphs: EnhancedParagraphsProps) {
+    return (
+      <div className="mx-auto p-6">
+        {paragraphs.paragraphs.map((paragraph, index) => {
+          const words = paragraph.split(" ");
+          const firstWord = words[0];
+          const restOfParagraph = words.slice(1).join(" ");
+
+          return (
+            <p key={index} className="mb-6 leading-relaxed">
+              <motion.span
+                className="inline-block font-bold text-2xl bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent"
+                variants={wordVariants}
+                initial="initial"
+                animate="animate"
+                whileHover="hover"
+              >
+                {firstWord}
+              </motion.span>
+              <span className="ml-2">{restOfParagraph}</span>
+            </p>
+          );
+        })}
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen flex flex-col justify-center items-center p-8 bg-[#1e2540] text-white">
@@ -62,29 +108,7 @@ export default function Page() {
         </h1>
         <div className="h-px bg-white w-full mb-8"></div>
         <div className="space-y-6 mb-5 w-2/3 text-2xl text-slate-300">
-          <p>
-            I am a math enthusiast and a passionate programmer who loves to dive
-            into the world of algorithms and code in my free time. My
-            fascination with numbers and logic often leads me to explore new
-            programming challenges, constantly pushing myself to learn and grow
-            in the field of technology.
-          </p>
-          <p>
-            Beyond the digital realm, I find joy in bouldering, a sport that not
-            only tests my physical strength but also sharpens my problem-solving
-            skills as I navigate intricate climbing routes. This love for
-            challenges extends to my musical pursuits as well.
-          </p>
-          <p>
-            Music has always been a significant part of my life, and I am
-            currently on an exciting journey of learning to play the drums. The
-            rhythmic beats and the coordination it demands are both exhilarating
-            and rewarding. When I'm not engrossed in coding or climbing, you'll
-            often find me immersed in music, either practicing the drums or
-            exploring new genres and sounds. These activities collectively fuel
-            my creativity and keep my mind engaged, allowing me to balance my
-            intellectual pursuits with physical and artistic expression.
-          </p>
+          <EnhancedParagraphs paragraphs={personal_paragraphs} />
         </div>
       </div>
     </div>
