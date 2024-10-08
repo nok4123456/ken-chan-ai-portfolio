@@ -1,48 +1,69 @@
 import React from "react";
-const Footer: React.FC = () => {
+import { Separator } from "@/components/ui/separator";
+import { Button } from "@/components/ui/button";
+import { Github, Linkedin, Mail, MapPin, Download } from "lucide-react";
+
+export default function Footer() {
+  const currentYear = new Date().getFullYear();
+
   return (
-    <footer className="bg-[#1e2540] text-white py-8">
+    <footer className="bg-[#1e2540] text-white py-12">
       <div className="container mx-auto px-4">
-        <div className="flex flex-wrap justify-between items-center">
-          <div className="w-full md:w-1/3 mb-6 md:mb-0">
-            <h3 className="text-2xl font-bold mb-2">Contact Me</h3>
-            <p className="mb-1">Email: nok4123456@gmail.com</p>
-            <p>Location: Hong Kong</p>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="space-y-4">
+            <h3 className="text-2xl font-bold">Contact Me</h3>
+            <div className="flex items-center space-x-2">
+              <Mail className="h-5 w-5" />
+              <p>nok4123456@gmail.com</p>
+            </div>
+            <div className="flex items-center space-x-2">
+              <MapPin className="h-5 w-5" />
+              <p>Hong Kong</p>
+            </div>
           </div>
-          <div className="w-full md:w-1/3 mb-6 md:mb-0">
-            <h3 className="text-2xl font-bold mb-2">Social Media</h3>
-            <ul>
-              <li className="mb-1">
+          <div className="space-y-4">
+            <h3 className="text-2xl font-bold">Social Media</h3>
+            <div className="flex space-x-4">
+              <Button variant="ghost" size="icon" asChild>
                 <a
                   href="https://www.linkedin.com/in/chan-ken-863348236/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-gray-300 transition-colors duration-200"
+                  aria-label="LinkedIn"
                 >
-                  LinkedIn
+                  <Linkedin className="h-5 w-5" />
                 </a>
-              </li>
-              <li className="mb-1">
+              </Button>
+              <Button variant="ghost" size="icon" asChild>
                 <a
                   href="https://github.com/nok4123456"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-gray-300 transition-colors duration-200"
+                  aria-label="GitHub"
                 >
-                  GitHub
+                  <Github className="h-5 w-5" />
                 </a>
-              </li>
-            </ul>
+              </Button>
+            </div>
           </div>
-          <div className="w-full md:w-1/3">
-            <p className="text-sm">
-              &copy; {new Date().getFullYear()} Ken Chan. All rights reserved.
-            </p>
+          <div className="space-y-4">
+            <h3 className="text-2xl font-bold">Resume</h3>
+            <Button variant="ghost" asChild>
+              <a
+                href="/Chan Kwan Nok - Resume.pdf"
+                download
+                aria-label="Download CV"
+              >
+                <Download className="mr-2 h-4 w-4" /> Download CV
+              </a>
+            </Button>
           </div>
+        </div>
+        <Separator className="my-8 bg-[#3a456c]" />
+        <div className="text-center text-sm text-gray-400">
+          &copy; {currentYear} Ken Chan. All rights reserved.
         </div>
       </div>
     </footer>
   );
-};
-
-export default Footer;
+}
