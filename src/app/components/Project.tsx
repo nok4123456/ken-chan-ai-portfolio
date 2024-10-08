@@ -40,7 +40,7 @@ const RightColumn: React.FC<RightColumnProps> = ({
   return (
     <div
       ref={ref as React.RefObject<HTMLDivElement>}
-      className="lg:w-2/3 bg-[#000000] p-8 relative"
+      className="lg:w-2/3 bg-[#000000] p-8 relative rounded-lg"
     >
       <span className="text-[#4a5568] text-sm">
         {String(rowNumber).padStart(2, "0")}_
