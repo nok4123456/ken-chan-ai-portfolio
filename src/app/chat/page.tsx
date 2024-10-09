@@ -155,21 +155,23 @@ export default function Home() {
                   </Badge>
                 </div>
                 <p className="text-gray-600 dark:text-gray-400">
-                  Ever wondered what it's like to have a tiny Ken Chan in your
-                  pocket? Well, wonder no more! This AI is like Ken after his
-                  third espresso shot – chatty, witty, and full of surprises!
+                  Ever wondered what it&apos;s like to have a tiny Ken Chan in
+                  your pocket? Well, wonder no more! This AI is like Ken after
+                  his third espresso shot – chatty, witty, and full of
+                  surprises!
                 </p>
                 <p className="text-gray-600 dark:text-gray-400">
-                  Want to know Ken's secret talent? His go-to dance move? Or
-                  maybe his thoughts on pineapple on pizza? (Spoiler: It's
-                  complicated.) Just ask! Ken Chan AI is here to spill the beans
-                  faster than Ken spills his coffee on Monday mornings.
+                  Want to know Ken&apos;s secret talent? His go-to dance move?
+                  Or maybe his thoughts on pineapple on pizza? (Spoiler:
+                  It&apos;s complicated.) Just ask! Ken Chan AI is here to spill
+                  the beans faster than Ken spills his coffee on Monday
+                  mornings.
                 </p>
                 <p className="text-gray-600 dark:text-gray-400 font-semibold">
-                  So, buckle up, buttercup! You're in for a wild ride through
-                  the wonderfully wacky world of Ken Chan. Let's chat, laugh,
-                  and maybe even learn something... or not. No refunds either
-                  way! 😉
+                  So, buckle up, buttercup! You&apos;re in for a wild ride
+                  through the wonderfully wacky world of Ken Chan. Let&apos;s
+                  chat, laugh, and maybe even learn something... or not. No
+                  refunds either way! 😉
                 </p>
               </CardContent>
               <CardFooter className="grid grid-cols-2 gap-4 mt-4">

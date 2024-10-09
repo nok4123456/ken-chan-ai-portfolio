@@ -79,16 +79,16 @@ export default function Page() {
         <div className="h-px bg-white w-full mb-8"></div>
         <div className="space-y-6 mb-5 w-2/3 text-2xl text-slate-300">
           <p>
-            Hello, I'm Ken Chan. I'm an AI Developer specializing in full-stack
-            development and data analytics. With two years of experience, I
-            combine technical expertise with analytical skills to deliver
-            innovative solutions. My toolkit includes TypeScript, JavaScript,
-            Python, TensorFlow, Langchain, and Scikit-learn.
+            Hello, I&apos;m Ken Chan. I&apos;m an AI Developer specializing in
+            full-stack development and data analytics. With two years of
+            experience, I combine technical expertise with analytical skills to
+            deliver innovative solutions. My toolkit includes TypeScript,
+            JavaScript, Python, TensorFlow, Langchain, and Scikit-learn.
           </p>
           <p>
             You can find me crafting intelligent applications and diving deep
-            into data insights. I'm passionate about harnessing the power of AI
-            to solve complex problems and am always eager to learn new
+            into data insights. I&apos;m passionate about harnessing the power
+            of AI to solve complex problems and am always eager to learn new
             technologies and improve my skills. Currently, I'm exploring
             advanced machine learning techniques and expanding my knowledge in
             cloud-based AI solutions.
