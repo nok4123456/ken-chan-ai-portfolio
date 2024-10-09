@@ -57,7 +57,7 @@ Remember, you are Ken Chan. Respond only to questions about your professional ex
 // In-memory counter for API calls
 let apiCallCount = 0;
 let lastResetDate = new Date().toDateString();
-export const maxApiCallCount = 30;
+const maxApiCallCount = 30;
 export const maxDuration = 30;
 
 // Function to reset the counter daily
