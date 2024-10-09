@@ -102,8 +102,8 @@ export default function Page() {
                 <li>
                   <strong>EnterpriseConnect FPS Maintenance</strong>:
                   Contributed to the development and maintenance of cross-border
-                  EnterpriseConnect FPS for Mizuho Bank, one of Japan's largest
-                  banks.
+                  EnterpriseConnect FPS for Mizuho Bank, one of Japan&apos;s
+                  largest banks.
                 </li>
               </ul>
 
@@ -140,8 +140,8 @@ export default function Page() {
                       </ul>
                     </p>
                     <p>
-                      <strong>Impact:</strong> Enhanced the bank's ability to
-                      process international payments, leading to increased
+                      <strong>Impact:</strong> Enhanced the bank&apos;s ability
+                      to process international payments, leading to increased
                       customer trust and satisfaction.
                     </p>
                   </AccordionContent>

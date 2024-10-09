@@ -89,7 +89,7 @@ export default function Page() {
             You can find me crafting intelligent applications and diving deep
             into data insights. I&apos;m passionate about harnessing the power
             of AI to solve complex problems and am always eager to learn new
-            technologies and improve my skills. Currently, I'm exploring
+            technologies and improve my skills. Currently, I&apos;m exploring
             advanced machine learning techniques and expanding my knowledge in
             cloud-based AI solutions.
           </p>

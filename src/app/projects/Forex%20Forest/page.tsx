@@ -95,9 +95,9 @@ export default function Page() {
                 Forex Forest stands as a leader in automated trading and AI
                 solutions, committed to advancing the field of algorithmic
                 trading through educational initiatives and innovative software
-                development. The company's focus is on developing cutting-edge
-                technology to empower traders with automated tools and
-                comprehensive educational resources.
+                development. The company&apos;s focus is on developing
+                cutting-edge technology to empower traders with automated tools
+                and comprehensive educational resources.
               </CardDescription>
             </CardHeader>
             <CardContent>
