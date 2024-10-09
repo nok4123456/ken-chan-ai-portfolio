@@ -14,6 +14,9 @@ const Navbar = () => {
         <Link href="/projects" className="text-white px-3">
           Projects
         </Link>
+        <Link href="/chat" className="text-white px-3">
+          Talk to me
+        </Link>
       </div>
     </nav>
   );
